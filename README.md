@@ -1,9 +1,9 @@
 # AbsensiSTMIK
 Aplikasi Website Absensi STMIK Sumedang
 
-![Alt text](/image/login-page.png?raw=true "Optional Title")
+![Alt text](/image/login-page.png?raw=true "Halaman Login")
 
-![Alt text](/image/admin-page.png?raw=true "Optional Title")
+![Alt text](/image/admin-page.png?raw=true "Halaman Admin")
 
 Lakukan clone repository dengan "git clone https://github.com/tedikurniawan/AbsensiSTMIK.git"
 
