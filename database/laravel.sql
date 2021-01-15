@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2021 at 12:13 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.25
+-- Waktu pembuatan: 15 Jan 2021 pada 18.05
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `college_classes`
+-- Struktur dari tabel `college_classes`
 --
 
 CREATE TABLE `college_classes` (
@@ -36,7 +36,7 @@ CREATE TABLE `college_classes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `college_classes`
+-- Dumping data untuk tabel `college_classes`
 --
 
 INSERT INTO `college_classes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `college_classes` (`id`, `name`, `created_at`, `updated_at`, `delete
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lessons`
+-- Struktur dari tabel `lessons`
 --
 
 CREATE TABLE `lessons` (
@@ -68,7 +68,7 @@ CREATE TABLE `lessons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `lessons`
+-- Dumping data untuk tabel `lessons`
 --
 
 INSERT INTO `lessons` (`id`, `weekday`, `start_time`, `end_time`, `created_at`, `updated_at`, `deleted_at`, `dosen_id`, `class_id`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `lessons` (`id`, `weekday`, `start_time`, `end_time`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -88,7 +88,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -113,7 +113,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_access_tokens`
+-- Struktur dari tabel `oauth_access_tokens`
 --
 
 CREATE TABLE `oauth_access_tokens` (
@@ -131,7 +131,7 @@ CREATE TABLE `oauth_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_auth_codes`
+-- Struktur dari tabel `oauth_auth_codes`
 --
 
 CREATE TABLE `oauth_auth_codes` (
@@ -146,7 +146,7 @@ CREATE TABLE `oauth_auth_codes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_clients`
+-- Struktur dari tabel `oauth_clients`
 --
 
 CREATE TABLE `oauth_clients` (
@@ -166,7 +166,7 @@ CREATE TABLE `oauth_clients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_personal_access_clients`
+-- Struktur dari tabel `oauth_personal_access_clients`
 --
 
 CREATE TABLE `oauth_personal_access_clients` (
@@ -179,7 +179,7 @@ CREATE TABLE `oauth_personal_access_clients` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oauth_refresh_tokens`
+-- Struktur dari tabel `oauth_refresh_tokens`
 --
 
 CREATE TABLE `oauth_refresh_tokens` (
@@ -192,7 +192,7 @@ CREATE TABLE `oauth_refresh_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Struktur dari tabel `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -204,7 +204,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Struktur dari tabel `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -216,7 +216,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Dumping data untuk tabel `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -250,12 +250,13 @@ INSERT INTO `permissions` (`id`, `title`, `created_at`, `updated_at`, `deleted_a
 (28, 'time_entry_edit', NULL, NULL, NULL),
 (29, 'time_entry_show', NULL, NULL, NULL),
 (30, 'time_entry_delete', NULL, NULL, NULL),
-(31, 'time_entry_access', NULL, NULL, NULL);
+(31, 'time_entry_access', NULL, NULL, NULL),
+(32, 'calendar_access', '2021-01-15 06:58:45', '2021-01-15 06:58:45', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permission_role`
+-- Struktur dari tabel `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -264,7 +265,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permission_role`
+-- Dumping data untuk tabel `permission_role`
 --
 
 INSERT INTO `permission_role` (`role_id`, `permission_id`) VALUES
@@ -333,12 +334,15 @@ INSERT INTO `permission_role` (`role_id`, `permission_id`) VALUES
 (4, 26),
 (4, 27),
 (4, 29),
-(4, 31);
+(4, 31),
+(1, 32),
+(3, 32),
+(4, 32);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Struktur dari tabel `roles`
 --
 
 CREATE TABLE `roles` (
@@ -350,7 +354,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Dumping data untuk tabel `roles`
 --
 
 INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -363,7 +367,7 @@ INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_user`
+-- Struktur dari tabel `role_user`
 --
 
 CREATE TABLE `role_user` (
@@ -372,7 +376,7 @@ CREATE TABLE `role_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role_user`
+-- Dumping data untuk tabel `role_user`
 --
 
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
@@ -410,7 +414,7 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `school_classes`
+-- Struktur dari tabel `school_classes`
 --
 
 CREATE TABLE `school_classes` (
@@ -422,7 +426,7 @@ CREATE TABLE `school_classes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `school_classes`
+-- Dumping data untuk tabel `school_classes`
 --
 
 INSERT INTO `school_classes` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -437,7 +441,7 @@ INSERT INTO `school_classes` (`id`, `name`, `created_at`, `updated_at`, `deleted
 -- --------------------------------------------------------
 
 --
--- Table structure for table `time_entries`
+-- Struktur dari tabel `time_entries`
 --
 
 CREATE TABLE `time_entries` (
@@ -452,7 +456,7 @@ CREATE TABLE `time_entries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `time_entries`
+-- Dumping data untuk tabel `time_entries`
 --
 
 INSERT INTO `time_entries` (`id`, `time_start`, `time_end`, `note`, `created_at`, `updated_at`, `deleted_at`, `user_id`) VALUES
@@ -467,12 +471,13 @@ INSERT INTO `time_entries` (`id`, `time_start`, `time_end`, `note`, `created_at`
 (9, '2021-01-06 12:24:59', '2021-01-06 14:25:06', 'Present', '2021-01-05 22:25:20', '2021-01-05 22:25:20', NULL, 2),
 (10, '2021-01-06 12:47:40', '2021-01-06 13:47:43', 'Present', '2021-01-05 22:47:52', '2021-01-05 22:47:52', NULL, 16),
 (11, '2021-01-12 11:00:20', '2021-01-12 13:00:33', 'Present', '2021-01-12 06:00:53', '2021-01-12 06:00:53', NULL, 10),
-(12, '2021-01-11 08:06:02', '2021-01-12 17:06:14', 'Present', '2021-01-12 06:06:25', '2021-01-12 06:06:25', NULL, 30);
+(12, '2021-01-11 08:06:02', '2021-01-12 17:06:14', 'Present', '2021-01-12 06:06:25', '2021-01-12 06:06:25', NULL, 30),
+(13, '2021-01-15 21:03:42', '2021-01-15 23:03:50', 'Test Absensi', '2021-01-15 07:04:01', '2021-01-15 07:04:01', NULL, 8);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -489,7 +494,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `deleted_at`, `class_id`) VALUES
@@ -516,7 +521,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 (21, 'Yopi Hidayatul Akbar, S.Kom, M.T.', 'yopi@stmik-sumedang.ac.id', NULL, '$2y$10$COPHGYQZSS5QJnzT4w7M8eMYbDYJvffF7dik8KaFThOWgEckP9Bui', NULL, '2021-01-05 22:37:34', '2021-01-05 22:37:34', NULL, NULL),
 (22, 'Atep Ruhiyat, M.Kom', 'atep@stmik-sumedang.ac.id', NULL, '$2y$10$06Ebv8EQMzQGmxWbQi1KQOFKSS7kght6qog6.3G1XCt1bsiYJFHgm', NULL, '2021-01-05 22:38:24', '2021-01-05 22:38:24', NULL, NULL),
 (23, 'Irfan Fadil, M.Kom.', 'irfan@stmik-sumedang.ac.id', NULL, '$2y$10$2YURcfh7e2gqvKLXFeAtFuHsrS2wF1sYOavFtPA4J90n2.D/X7TPm', NULL, '2021-01-05 22:39:15', '2021-01-05 22:39:15', NULL, NULL),
-(24, 'Deni Indra Junaedi, M.M.', 'deni@stmik-sumedang.ac.id', NULL, '$2y$10$G3tIsgHaqKknQanUVw1Q0eecNTD4ZYqhR1bGI5BBWc.DhiLkOMAMS', NULL, '2021-01-05 22:40:28', '2021-01-05 22:40:28', NULL, NULL),
+(24, 'Dani Indra Junaedi, M.M.', 'dani@stmik-sumedang.ac.id', NULL, '$2y$10$G3tIsgHaqKknQanUVw1Q0eecNTD4ZYqhR1bGI5BBWc.DhiLkOMAMS', NULL, '2021-01-05 22:40:28', '2021-01-15 09:24:06', NULL, NULL),
 (25, 'David Setiadi, S.Kom, M.T.', 'david@stmik-sumedang.ac.id', NULL, '$2y$10$faYqUlsuf5F1YbPEe8Lrn.DVoJ396k8XXnwAM817IfhmnrdbCNKmC', NULL, '2021-01-05 22:41:37', '2021-01-05 22:41:37', NULL, NULL),
 (26, 'H. Mulya Suryadi, S.Pd, M.Kom.', 'mulya@stmik-sumedang.ac.id', NULL, '$2y$10$swJ3nZB6PcWNNpvm0gGW2uz31yv2Tw5caMLL0i673SKnMQtDQP4HS', NULL, '2021-01-05 22:43:13', '2021-01-05 22:43:13', NULL, NULL),
 (27, 'Dwi Yuniarto, S.Sos, M.Kom', 'dwi@stmik-sumedang.ac.id', NULL, '$2y$10$4sf3RIvOMSuDZ5Swbl76ren9VFpsqNVcfFXsVq0JKuLq94J0eqADa', NULL, '2021-01-05 22:44:04', '2021-01-05 22:44:04', NULL, NULL),
@@ -529,13 +534,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
--- Indexes for table `college_classes`
+-- Indeks untuk tabel `college_classes`
 --
 ALTER TABLE `college_classes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lessons`
+-- Indeks untuk tabel `lessons`
 --
 ALTER TABLE `lessons`
   ADD PRIMARY KEY (`id`),
@@ -543,92 +548,92 @@ ALTER TABLE `lessons`
   ADD KEY `class_fk_1001508` (`class_id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `oauth_access_tokens`
+-- Indeks untuk tabel `oauth_access_tokens`
 --
 ALTER TABLE `oauth_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_access_tokens_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_auth_codes`
+-- Indeks untuk tabel `oauth_auth_codes`
 --
 ALTER TABLE `oauth_auth_codes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_auth_codes_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_clients`
+-- Indeks untuk tabel `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_clients_user_id_index` (`user_id`);
 
 --
--- Indexes for table `oauth_personal_access_clients`
+-- Indeks untuk tabel `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `oauth_refresh_tokens`
+-- Indeks untuk tabel `oauth_refresh_tokens`
 --
 ALTER TABLE `oauth_refresh_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`);
 
 --
--- Indexes for table `password_resets`
+-- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `permissions`
+-- Indeks untuk tabel `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `permission_role`
+-- Indeks untuk tabel `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD KEY `role_id_fk_1028284` (`role_id`),
   ADD KEY `permission_id_fk_1028284` (`permission_id`);
 
 --
--- Indexes for table `roles`
+-- Indeks untuk tabel `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `role_user`
+-- Indeks untuk tabel `role_user`
 --
 ALTER TABLE `role_user`
   ADD KEY `user_id_fk_1028293` (`user_id`),
   ADD KEY `role_id_fk_1028293` (`role_id`);
 
 --
--- Indexes for table `school_classes`
+-- Indeks untuk tabel `school_classes`
 --
 ALTER TABLE `school_classes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `time_entries`
+-- Indeks untuk tabel `time_entries`
 --
 ALTER TABLE `time_entries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_fk_1028320` (`user_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -636,102 +641,102 @@ ALTER TABLE `users`
   ADD KEY `class_fk_1001550` (`class_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `college_classes`
+-- AUTO_INCREMENT untuk tabel `college_classes`
 --
 ALTER TABLE `college_classes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `lessons`
+-- AUTO_INCREMENT untuk tabel `lessons`
 --
 ALTER TABLE `lessons`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `oauth_clients`
+-- AUTO_INCREMENT untuk tabel `oauth_clients`
 --
 ALTER TABLE `oauth_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `oauth_personal_access_clients`
+-- AUTO_INCREMENT untuk tabel `oauth_personal_access_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `permissions`
+-- AUTO_INCREMENT untuk tabel `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT untuk tabel `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `school_classes`
+-- AUTO_INCREMENT untuk tabel `school_classes`
 --
 ALTER TABLE `school_classes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `time_entries`
+-- AUTO_INCREMENT untuk tabel `time_entries`
 --
 ALTER TABLE `time_entries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `lessons`
+-- Ketidakleluasaan untuk tabel `lessons`
 --
 ALTER TABLE `lessons`
   ADD CONSTRAINT `class_fk_1001508` FOREIGN KEY (`class_id`) REFERENCES `college_classes` (`id`),
   ADD CONSTRAINT `dosen_fk_1001496` FOREIGN KEY (`dosen_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `permission_role`
+-- Ketidakleluasaan untuk tabel `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_id_fk_1028284` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_id_fk_1028284` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `role_user`
+-- Ketidakleluasaan untuk tabel `role_user`
 --
 ALTER TABLE `role_user`
   ADD CONSTRAINT `role_id_fk_1028293` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_id_fk_1028293` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `time_entries`
+-- Ketidakleluasaan untuk tabel `time_entries`
 --
 ALTER TABLE `time_entries`
   ADD CONSTRAINT `user_fk_1028320` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `users`
+-- Ketidakleluasaan untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `class_fk_1001550` FOREIGN KEY (`class_id`) REFERENCES `college_classes` (`id`);
