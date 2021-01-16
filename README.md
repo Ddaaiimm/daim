@@ -6,6 +6,7 @@ Aplikasi Website Absensi STMIK Sumedang
 ![Alt text](/image/admin-page.png?raw=true "Halaman Admin")
 
 Lakukan clone repository dengan "git clone https://github.com/tedikurniawan/AbsensiSTMIK.git" 
+
 atau "git clone git@gitlab.com:tedikurniawan/AbsensiSTMIK.git"
 
 Jalankan/run "composer install"
